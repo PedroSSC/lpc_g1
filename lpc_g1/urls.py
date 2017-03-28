@@ -16,6 +16,12 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from g1.views import listaEventos, buscaEvento, listaPessoas, buscaPessoa
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^listaeventos/', listaEventos, name='listaEventos'),
+    url(r'^buscaevento/(?P<id>[1-9]){1}/', buscaEvento, name='buscaEvento'),
+    url(r'^listapessoas/', listaPessoas, name='listaPessoas'),
+    url(r'^buscapessoa/(?P<id>[1-9]){1}/', buscaPessoa, name='buscaPessoas'),
 ]
